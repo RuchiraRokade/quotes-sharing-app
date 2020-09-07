@@ -7,8 +7,14 @@ import {
   GET_QUOTES,
   LoadDataSuccess,
   DATA_LOAD,
+  UpdateQuote,
+  UPDATE_QUOTES,
+  UPDATE_QUOTE_SUCCESS,
+  DELETE_QUOTES,
+  DeleteQuotes,
+  UpdateQuoteSuccess,
 } from './quote.actions';
-import { Quote } from 'src/app/models/quote';
+import { Quote } from 'src/app/core/models/quote';
 const mockQuote = {
   quote: 'If you judge people, you have no time to love them',
   description:
@@ -42,7 +48,7 @@ describe('AddQuoteSuccess', () => {
   });
 });
 
-describe('GetAllQuotes', () => {
+describe('LoadDataSuccess', () => {
   it('should create an action of type GET_QUOTES', () => {
     const payload: Quote[] = [
       {
@@ -69,3 +75,55 @@ describe('GetAllQuotes', () => {
     });
   });
 });
+
+describe('UpdateQuote', () => {
+  it('should create an action of type UPDATE_QUOTES', () => {
+    const payload: Quote = {
+      id: 3,
+      quote: 'If you judge people, you have no time to love them',
+      description:
+        'If you judge people, you have no time to love them - description',
+      author: 'Dalai Lama',
+      category: 'Love',
+    };
+    const action = new UpdateQuote(payload);
+    expect({ ...action }).toEqual({
+      type: UPDATE_QUOTES,
+      payload,
+    });
+  });
+});
+describe('UpdateQuoteSuccess', () => {
+  it('should create an action of type UPDATE_QUOTE_SUCCESS', () => {
+    const payload: Quote = {
+      id: 3,
+      quote: 'If you judge people, you have no time to love them',
+      description:
+        'If you judge people, you have no time to love them - description',
+      author: 'Dalai Lama',
+      category: 'Love',
+    };
+    const action = new UpdateQuoteSuccess(payload);
+    expect({ ...action }).toEqual({
+      type: UPDATE_QUOTE_SUCCESS,
+      payload,
+    });
+  });
+});
+
+// describe('DeleteQuotes', () => {
+//   it('should create an action of type DELETE_QUOTES', () => {
+//     const payload: Quote = {
+//       id: 3,
+//       quote: 'If you judge people, you have no time to love them',
+//       description:
+//         'If you judge people, you have no time to love them - description',
+//       author: 'Dalai Lama',
+//       category: 'Love',
+//     };
+//     const action = new DeleteQuotes(3);
+//     expect({ ...action }).toEqual({
+//       type: DELETE_QUOTES,
+//     });
+//   });
+// });
