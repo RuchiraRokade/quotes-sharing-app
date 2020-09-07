@@ -2,7 +2,10 @@
     <div>
         <header class="header">
             <span class="heading-title">Quotes sharing app</span>
-
+            <button class="button-one actions" (click)="toggleTheme()">
+    <span *ngIf="isDarkTheme">Use light theme</span>
+    <span *ngIf="!isDarkTheme">Use dark theme</span>
+</button>
             <nav class="navigation">
                 <div *ngIf="isAuthenticated; then userLoggedIn; else showLoginAndSignUp"></div>
                 <ng-template #userLoggedIn>
@@ -14,10 +17,6 @@
           </button>
                 </ng-template>
                 <ng-template #showLoginAndSignUp>
-                    <button class="button-one actions" (click)="toggleTheme()">
-                        <span *ngIf="isDarkTheme">Use light theme</span>
-                        <span *ngIf="!isDarkTheme">Use dark theme</span>
-                    </button>
                     <button aria-label="Log in" class="button-two actions" (click)="gotoLogin()">
             Login
           </button>
