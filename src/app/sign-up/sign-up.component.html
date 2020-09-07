@@ -1,0 +1,30 @@
+<div class="create-form form-background">
+    <h3 *ngIf="displayLogin">Login Form</h3>
+    <h3 *ngIf="!displayLogin">Sign up</h3>
+    <hr />
+    <form [formGroup]="signUpForm">
+        <div class="col50" *ngIf="!displayLogin">
+            <label for="password">Enter the name:</label>
+        </div>
+        <div class="col50" *ngIf="!displayLogin">
+            <input type="text" formControlName="name" placeholder="Enter your name" />
+        </div>
+        <div class="col50">
+            <label for="password">Enter the Email id:</label>
+        </div>
+        <div class="col50">
+            <input type="email" formControlName="email" placeholder="Enter your email id" />
+        </div>
+        <div class="col50">
+            <label for="password">Enter the Password id:</label>
+        </div>
+        <div class="col50">
+            <input type="password" formControlName="password" placeholder="Enter your password" />
+        </div>
+        <button aria-label="Sign up" (click)="loginOrRegister()" class="button-one" [disabled]="signUpForm.invalid">
+      <span *ngIf="!displayLogin">Sign Up</span>
+      <span *ngIf="displayLogin">Login</span>
+    </button>
+    </form>
+    <span>{{ errorMessage }}</span>
+</div>

@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./themes/palette.scss";
+* {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table,
+thead {
+    border: 1px solid lightgrey;
+    text-align: center;
+}
+
+.container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: grid;
+}
+
+.button-one {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    font-weight: normal;
+    font-size: 1rem;
+    pointer-events: cursor;
+}
+
+.button-two {
+    color: black;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    font-weight: normal;
+    font-size: 1rem;
+    pointer-events: cursor;
+}
+
+.button-three {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    border: none;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.contain-all {
+    &.light-mode {
+        @import "./themes/light.scss";
+        .form-background {
+            background-color: $background-color;
+        }
+        .button-one {
+            background: $button-background-color-one;
+        }
+        .button-two {
+            background: $button-background-color-two;
+        }
+        .button-three {
+            background: $button-background-color-three;
+        }
+        table {
+            thead {
+                tr {
+                    background-color: $background-color;
+                }
+            }
+            tbody {
+                tr {
+                    &:nth-child(even) {
+                        background-color: $table-background;
+                    }
+                }
+            }
+        }
+    }
+    &.dark-mode {
+        @import "./themes/dark.scss";
+        .form-background {
+            background-color: $background-color;
+        }
+        .button-one {
+            background: $button-background-color-one;
+        }
+        .button-two {
+            background: $button-background-color-two;
+        }
+        .button-three {
+            background: $button-background-color-three;
+        }
+        table {
+            thead {
+                tr {
+                    background-color: $background-color;
+                }
+            }
+            tbody {
+                tr {
+                    &:nth-child(even) {
+                        background-color: $table-background;
+                    }
+                }
+            }
+        }
+    }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button {
+    background-color: #07689f;
+    &:disabled {
+        background-color: lightgrey;
+    }
+}

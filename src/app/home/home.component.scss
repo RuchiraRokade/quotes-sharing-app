@@ -1,0 +1,25 @@
+.header {
+    padding: 1rem;
+    overflow: hidden;
+    .heading-title {
+        font-style: italic;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    .navigation {
+        display: contents;
+    }
+    .actions {
+        float: right;
+        border-radius: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
+.login {
+    margin-left: 0.5rem;
+}
+
+.quotes-section {
+    margin-top: 1rem;
+}
