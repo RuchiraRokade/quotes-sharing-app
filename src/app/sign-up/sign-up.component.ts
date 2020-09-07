@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/User';
+import { User } from '../core/models/User';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppState, selectAuthState } from '../store/app.state';
-import { SignUp, LogIn } from '../store/actions/user.actions';
+import { AppState, selectAuthState } from '../sign-up/store/app.state';
+import { SignUp, LogIn } from './store/actions/user.actions';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 @Component({

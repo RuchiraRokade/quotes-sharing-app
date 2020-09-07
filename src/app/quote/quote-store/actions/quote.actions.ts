@@ -1,6 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Quote } from '../../models/quote';
-
+import { Quote } from '../../../core/models/quote';
 
 export const ADD_QUOTE = '[QUOTE] ADD';
 export const GET_QUOTES = '[QUOTE] GET';
@@ -12,38 +11,43 @@ export const UPDATE_QUOTE_SUCCESS = '[QUOTE] UPDATE QUOTE SUCCESS';
 export const DELETE_QUOTE_SUCCESS = '[QUOTE] DELETE QUOTE SUCCESS';
 
 export class AddQuote implements Action {
-    readonly type = ADD_QUOTE;
-    constructor(public payload: Quote) {
-    }
+  readonly type = ADD_QUOTE;
+  constructor(public payload: Quote) {}
 }
 export class GetQuotes implements Action {
-    readonly type = GET_QUOTES;
-    constructor() {}
+  readonly type = GET_QUOTES;
+  constructor() {}
 }
 export class DeleteQuotes implements Action {
-    readonly type = DELETE_QUOTES;
-    constructor(public payload: number) {}
+  readonly type = DELETE_QUOTES;
+  constructor(public payload: number) {}
 }
 export class UpdateQuote implements Action {
-    readonly type = UPDATE_QUOTES;
-    constructor(public payload: Quote) {}
+  readonly type = UPDATE_QUOTES;
+  constructor(public payload: Quote) {}
 }
 
 export class LoadDataSuccess implements Action {
-    readonly type = DATA_LOAD;
-    constructor(public payload: Quote[]) {}
+  readonly type = DATA_LOAD;
+  constructor(public payload: Quote[]) {}
 }
 export class AddQuoteSuccess implements Action {
-    readonly type = ADD_QUOTE_SUCCESS;
-    constructor(public payload: Quote) {}
+  readonly type = ADD_QUOTE_SUCCESS;
+  constructor(public payload: Quote) {}
 }
 export class UpdateQuoteSuccess implements Action {
-    readonly type = UPDATE_QUOTE_SUCCESS;
-    constructor(public payload: Quote) {}
+  readonly type = UPDATE_QUOTE_SUCCESS;
+  constructor(public payload: Quote) {}
 }
 export class DeleteQuoteSuccess implements Action {
-    readonly type = DELETE_QUOTE_SUCCESS;
-  }
+  readonly type = DELETE_QUOTE_SUCCESS;
+}
 export type QuoteActions =
-    AddQuote |
-    GetQuotes | DeleteQuotes | UpdateQuote | LoadDataSuccess | AddQuoteSuccess | UpdateQuoteSuccess | DeleteQuoteSuccess;
+  | AddQuote
+  | GetQuotes
+  | DeleteQuotes
+  | UpdateQuote
+  | LoadDataSuccess
+  | AddQuoteSuccess
+  | UpdateQuoteSuccess
+  | DeleteQuoteSuccess;
