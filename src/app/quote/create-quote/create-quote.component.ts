@@ -1,17 +1,16 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Quote } from '../../core/models/quote';
 import { QuotesService } from '../../core/services/quotes.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { AppState, quoteState } from '../../sign-up/store/app.state';
 import {
   AddQuote,
   GetQuotes,
   UpdateQuote,
 } from '../../quote/quote-store/actions/quote.actions';
-import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import { AppState, quoteState } from '../../sign-up/store/app.state';
 
 @Component({
   selector: 'app-create-quote',
@@ -126,6 +125,7 @@ export class CreateQuoteComponent implements OnInit {
       this.router.navigate(['/']);
     }
   }
+
   public gotoHome(): void {
     this.router.navigate(['/']);
   }

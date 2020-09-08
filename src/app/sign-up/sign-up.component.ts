@@ -48,7 +48,7 @@ export class SignUpComponent implements OnInit {
   private initializeSignUpForm(): void {
     this.signUpForm = new FormGroup({
       name: new FormControl(''),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
     });
   }
@@ -68,6 +68,10 @@ export class SignUpComponent implements OnInit {
       password: this.password,
       name: this.name,
     };
+  }
+
+  public resetForm(): void {
+    this.signUpForm.reset();
   }
 
   get name(): string {
