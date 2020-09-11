@@ -33,7 +33,9 @@ export class SignUpComponent implements OnInit {
     this.initializeSignUpForm();
     this.setUserData();
     this.getState.subscribe((state) => {
-      this.errorMessage = state.errorMessage;
+      if (state) {
+        this.errorMessage = state.errorMessage;
+      }
     });
     this.errorMessage = undefined;
     this.route.data.subscribe((params) => {

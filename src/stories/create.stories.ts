@@ -1,30 +1,28 @@
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { provideMockStore } from '@ngrx/store/testing';
 import { Meta, Story } from '@storybook/angular';
-import { SignUpComponent } from '../app/sign-up/sign-up.component';
-
+import { QuotesService } from '../app/core/services/quotes.service';
+import { CreateQuoteComponent } from '../app/quote/create-quote/create-quote.component';
 export default {
-  title: 'Sign up component',
-  component: SignUpComponent,
+  title: 'create-quote component',
+  component: CreateQuoteComponent,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 } as Meta;
-const Template: Story<SignUpComponent> = (args: SignUpComponent) => ({
-  component: SignUpComponent,
+const Template: Story<CreateQuoteComponent> = (args: CreateQuoteComponent) => ({
+  component: CreateQuoteComponent,
   moduleMetadata: {
     imports: [
-      CommonModule,
       RouterTestingModule.withRoutes([]),
       FormsModule,
       ReactiveFormsModule,
       HttpClientModule,
     ],
-    declarations: [SignUpComponent],
-    providers: [provideMockStore({})],
+    declarations: [CreateQuoteComponent],
+    providers: [provideMockStore(), QuotesService],
   },
   props: { ...args },
 });

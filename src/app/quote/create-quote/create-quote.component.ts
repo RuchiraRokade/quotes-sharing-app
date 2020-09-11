@@ -52,7 +52,7 @@ export class CreateQuoteComponent implements OnInit {
     this.initializeCreateQuoteForm(this.existingQuote);
 
     this.store.subscribe((data) => {
-      if (data) {
+      if (data && data.quote) {
         if (data.quote.success) {
           this.createQuoteForm.reset();
         }

@@ -35,7 +35,9 @@ export class QuotesListComponent implements OnInit {
     this.loadAllQuotes();
     this.createQuote = false;
     this.store.subscribe((data) => {
-      this.quotes = data.quote.quote;
+      if (data && data.quote) {
+        this.quotes = data.quote.quote;
+      }
     });
   }
 

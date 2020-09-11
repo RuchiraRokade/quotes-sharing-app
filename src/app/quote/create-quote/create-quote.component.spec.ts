@@ -34,5 +34,3 @@ describe('CreateQuoteComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-describe('The oniniti ', () => {});
